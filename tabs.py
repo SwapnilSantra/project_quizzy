@@ -21,7 +21,6 @@ class DifficultyDialog(QDialog):
 
     def get_difficulty(self):
         """Return selected difficulty based on radio buttons"""
-        # Replace with YOUR radio button objectNames from UI
         if self.easybutton.isChecked():     
             return "easy"
         elif self.mediumbutton.isChecked():
