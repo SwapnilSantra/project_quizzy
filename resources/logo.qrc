@@ -1,0 +1,41 @@
+<RCC>
+  <qresource prefix="&lt;noprefix>">
+    <file>icons8-user-100.png</file>
+    <file>administrator.png</file>
+    <file>user.png</file>
+    <file>4chan.png</file>
+    <file>admin-panel.png</file>
+    <file>back-button.png</file>
+    <file>button.png</file>
+    <file>cat-generative-ai-free-png.png</file>
+    <file>dashboard.png</file>
+    <file>databricks.png</file>
+    <file>hide.png</file>
+    <file>home.png</file>
+    <file>icons8-administrator-male-40.png</file>
+    <file>icons8-administrator-male-52.png</file>
+    <file>icons8-administrator-male-100.png</file>
+    <file>icons8-admin-panel-64.png</file>
+    <file>icons8-admin-panel-100.png</file>
+    <file>icons8-back-100.png</file>
+    <file>icons8-dashboard-layout-24.png</file>
+    <file>icons8-dashboard-layout-96.png</file>
+    <file>icons8-exit-100.png</file>
+    <file>icons8-login-30.png</file>
+    <file>icons8-management-90.png</file>
+    <file>icons8-quiz-64.png</file>
+    <file>icons8-quiz-100.png</file>
+    <file>icons8-scoreboard-100.png</file>
+    <file>icons8-trophy-80.png</file>
+    <file>icons8-user-80.png</file>
+    <file>icons8-winner-80.png</file>
+    <file>key.png</file>
+    <file>left.png</file>
+    <file>logo.qrc</file>
+    <file>papra.png</file>
+    <file>password.png</file>
+    <file>power.png</file>
+    <file>user-interface.png</file>
+    <file>view.png</file>
+  </qresource>
+</RCC>
