@@ -43,7 +43,7 @@ class BaseDash(QMainWindow):
         self.panel_animation.finished.disconnect(self.hide_once)  # Clean up
     
     def start_quiz(self,difficulty):
-        self.quizpage = QuizForm('hard')
+        self.quizpage = QuizForm(difficulty)
         self.quizpage.showNormal()
         self.close()
 
