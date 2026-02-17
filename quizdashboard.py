@@ -18,7 +18,7 @@ class QuizForm(QMainWindow):
         self.stackedWidget.setCurrentIndex(0)
     
         self.nextbutton.clicked.connect(self.nextquestion)
-        self.saveandcont.clicked.connect(self.nextquestion)
+        self.saveandcont.clicked.connect(self.save_and_continue)
         self.finishbutton.clicked.connect(self.finish_quiz)
     def load_quiz(self):
         """Load quiz using QuizLoader"""
