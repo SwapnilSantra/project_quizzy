@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Dialog</class>
  <widget class="QDialog" name="Dialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,27 +19,27 @@
   <widget class="QLabel" name="score">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>100</y>
-     <width>61</width>
+     <x>150</x>
+     <y>130</y>
+     <width>21</width>
      <height>51</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>798</string>
    </property>
   </widget>
   <widget class="QLabel" name="total">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>100</y>
-     <width>47</width>
+     <x>230</x>
+     <y>130</y>
+     <width>21</width>
      <height>51</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>800</string>
    </property>
   </widget>
   <widget class="QLabel" name="percentage">
@@ -82,6 +85,55 @@
    </property>
    <property name="flat">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size:11pt</string>
+   </property>
+   <property name="text">
+    <string>Congratulation! You've Completed the Quiz!!</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>130</y>
+     <width>71</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-color:rgb(0, 255, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="text">
+    <string>YOUR SCORE:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>130</y>
+     <width>41</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 8pt &quot;Rubik&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Out Of :</string>
    </property>
   </widget>
  </widget>

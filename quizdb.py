@@ -5,16 +5,23 @@ class QuizLoader:
         self.db_path = db_path
         self.quiz_data = []
         self.question_ids = []
+
+        self.TABLES ={
+            'easy':'easy_questions',
+            'medium':'medium_questions',
+            'hard':'hard_questions'
+        }
     
-    def load_quiz_data(self):
+    def load_quiz_data(self,difficulty = "medium"):
         """Load all questions from database"""
+        table_name = self.TABLES.get(difficulty,self.TABLES['medium'])
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
-        cursor.execute("SELECT QID,QUESTION,OPTION1,OPTION2,OPTION3,OPTION4 FROM questions ORDER BY QID")
+        cursor.execute(f"""SELECT QID,QUESTION,OPTION1,OPTION2,OPTION3,OPTION4 FROM {table_name} ORDER BY RANDOM() LIMIT 20""")
         self.quiz_data = cursor.fetchall()
         self.question_ids = [row[0] for row in self.quiz_data]
         conn.close()
-        print(f"✅ Loaded {len(self.quiz_data)} questions")
+        print(f"Loaded {len(self.quiz_data)} questions")
         return self.quiz_data
     
     def get_question(self, index):
@@ -31,14 +38,13 @@ class QuizLoader:
     def calculate_score(self,user_answers):
         self.user_answers = user_answers
         """Compare user answers vs correct answers from DB"""
-        conn = sqlite3.connect('databases/quiz.db')
+        conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
                                          
         score = 0
         total = 0
                                                                  
         for qid, user_answer in self.user_answers.items():
-        # Get correct answer from DB (add 'correct_answer' column to table)
             cursor.execute("SELECT CORRECTOP FROM questions WHERE QID = ?", (qid,))
             result = cursor.fetchone()
                                                                                                                              

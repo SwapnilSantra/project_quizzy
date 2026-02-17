@@ -1,9 +1,10 @@
 from resources.logo import *
 #from PyQt5 import QtWidgets
 from PyQt5.QtCore import QPropertyAnimation,QEasingCurve, QRect
-from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtWidgets import QMainWindow,QDialog
 from PyQt5.uic import loadUi
 from quizdashboard import QuizForm
+from tabs import DifficultyDialog
 class BaseDash(QMainWindow):
     def __init__(self,ui_file):
         super(BaseDash,self).__init__()
@@ -19,7 +20,7 @@ class BaseDash(QMainWindow):
         self.togglemenu.clicked.connect(self.toggle_left_menu)
         self.toggleback.clicked.connect(self.toggle_left_menu)
 
-        self.startquiz.clicked.connect(self.start_quiz) 
+        self.startquiz.clicked.connect(self.show_difficulty_dialog) 
     
     def toggle_left_menu(self):
     
@@ -28,8 +29,7 @@ class BaseDash(QMainWindow):
             self.panel_animation.setDuration(300)
             self.panel_animation.setStartValue(QRect(-250, 0, 250, 860))  # Off left
             self.panel_animation.setEndValue(QRect(0, 0, 250, 860))        # Slide to position 0
-        else:
-            # SLIDE OUT to LEFT (visible → off-screen)
+        else: 
             self.panel_animation.setDuration(300)
             self.panel_animation.setStartValue(QRect(0, 0, 250, 860))      # Current position
             self.panel_animation.setEndValue(QRect(-250, 0, 250, 860))     # Slide off left
@@ -42,10 +42,25 @@ class BaseDash(QMainWindow):
         self.leftmenu.hide()
         self.panel_animation.finished.disconnect(self.hide_once)  # Clean up
     
-    def start_quiz(self):
-        self.quizpage = QuizForm()
+    def start_quiz(self,difficulty):
+        self.quizpage = QuizForm('hard')
         self.quizpage.showNormal()
         self.close()
+
+    def show_difficulty_dialog(self):
+        """Show difficulty selection then start quiz"""
+        dialog = DifficultyDialog(self)
+        
+        if dialog.exec_() == QDialog.Accepted:
+            difficulty = dialog.get_difficulty()
+            print(f"🎯 Starting {difficulty} quiz!")
+            
+            self.start_quiz(difficulty)
+            self.hide()
+        else:
+            print("Quiz is cancelled!!")
+    
+
 
 class AdminDash(BaseDash):
    def __init__(self):
