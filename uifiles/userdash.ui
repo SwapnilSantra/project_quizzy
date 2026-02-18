@@ -191,7 +191,7 @@ background-color:rgb(90, 255, 78)
         <string notr="true">font-size:22pt</string>
        </property>
        <property name="text">
-        <string>ADMIN DASHBOARD</string>
+        <string>USER DASHBOARD</string>
        </property>
       </widget>
      </item>
@@ -396,7 +396,7 @@ background-color:rgb(90, 255, 78)
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>260</y>
+      <y>280</y>
       <width>491</width>
       <height>351</height>
      </rect>
@@ -404,34 +404,11 @@ background-color:rgb(90, 255, 78)
     <property name="title">
      <string/>
     </property>
-    <widget class="QPushButton" name="pushButton_3">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>40</y>
-       <width>101</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="../resources/logo.qrc">
-       <normaloff>:/&lt;noprefix&gt;/icons8-quiz-64.png</normaloff>:/&lt;noprefix&gt;/icons8-quiz-64.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>100</height>
-      </size>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton_4">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>170</y>
+       <x>180</x>
+       <y>40</y>
        <width>101</width>
        <height>81</height>
       </rect>
@@ -477,7 +454,7 @@ background-color:rgb(90, 255, 78)
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>40</y>
+       <y>170</y>
        <width>101</width>
        <height>81</height>
       </rect>
@@ -506,20 +483,20 @@ background-color:rgb(90, 255, 78)
       </rect>
      </property>
      <property name="text">
-      <string>Create Quiz</string>
+      <string>Start Quiz</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_15">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>130</y>
-       <width>101</width>
+       <x>200</x>
+       <y>260</y>
+       <width>71</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>MANAGE ROLES</string>
+      <string>Contact Admin</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_16">
@@ -527,21 +504,21 @@ background-color:rgb(90, 255, 78)
       <rect>
        <x>310</x>
        <y>130</y>
-       <width>101</width>
+       <width>71</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Admin Settings</string>
+      <string>User Settings</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_17">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>260</y>
+       <x>190</x>
+       <y>130</y>
        <width>91</width>
-       <height>21</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -551,7 +528,7 @@ background-color:rgb(90, 255, 78)
     <widget class="QPushButton" name="pushButton_7">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>60</x>
        <y>170</y>
        <width>101</width>
        <height>81</height>
@@ -571,36 +548,84 @@ background-color:rgb(90, 255, 78)
       </size>
      </property>
     </widget>
-   </widget>
-   <widget class="QPushButton" name="startquiz">
-    <property name="geometry">
-     <rect>
-      <x>720</x>
-      <y>400</y>
-      <width>111</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="../resources/logo.qrc">
-      <normaloff>:/&lt;noprefix&gt;/icons8-quiz-100.png</normaloff>:/&lt;noprefix&gt;/icons8-quiz-100.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>100</width>
-      <height>100</height>
-     </size>
-    </property>
+    <widget class="QPushButton" name="startquiz">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>40</y>
+       <width>111</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources/logo.qrc">
+       <normaloff>:/&lt;noprefix&gt;/icons8-quiz-100.png</normaloff>:/&lt;noprefix&gt;/icons8-quiz-100.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>50</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>170</y>
+       <width>101</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources/logo.qrc">
+       <normaloff>:/&lt;noprefix&gt;/icons8-exit-100.png</normaloff>:/&lt;noprefix&gt;/icons8-exit-100.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>100</width>
+       <height>100</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>260</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Exit</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_19">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>260</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>See Personal Details</string>
+     </property>
+    </widget>
    </widget>
    <zorder>horizontalLayoutWidget</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>leftmenu</zorder>
    <zorder>togglemenu</zorder>
    <zorder>groupBox</zorder>
-   <zorder>startquiz</zorder>
   </widget>
  </widget>
  <tabstops>
