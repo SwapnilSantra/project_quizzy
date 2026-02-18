@@ -20,7 +20,7 @@ class BaseDash(QMainWindow):
         self.togglemenu.clicked.connect(self.toggle_left_menu)
         self.toggleback.clicked.connect(self.toggle_left_menu)
 
-        self.startquiz.clicked.connect(self.show_difficulty_dialog) 
+        self.startquiz.clicked.connect(self.start_quiz) 
     
     def toggle_left_menu(self):
     
