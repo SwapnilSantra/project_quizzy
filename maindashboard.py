@@ -20,7 +20,7 @@ class BaseDash(QMainWindow):
         self.togglemenu.clicked.connect(self.toggle_left_menu)
         self.toggleback.clicked.connect(self.toggle_left_menu)
 
-        self.startquiz.clicked.connect(self.start_quiz) 
+        self.startquiz.clicked.connect(self.show_difficulty_dialog) 
     
     def toggle_left_menu(self):
     
@@ -43,14 +43,13 @@ class BaseDash(QMainWindow):
         self.panel_animation.finished.disconnect(self.hide_once)  # Clean up
     
     def start_quiz(self,difficulty):
-        self.quizpage = QuizForm('hard')
+        self.quizpage = QuizForm(difficulty)
         self.quizpage.showNormal()
-        self.close()
 
     def show_difficulty_dialog(self):
         """Show difficulty selection then start quiz"""
         dialog = DifficultyDialog(self)
-        
+
         if dialog.exec_() == QDialog.Accepted:
             difficulty = dialog.get_difficulty()
             print(f"🎯 Starting {difficulty} quiz!")

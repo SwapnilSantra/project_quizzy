@@ -113,7 +113,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-color:rgb(0, 255, 0);
+    <string notr="true">color:rgb(0, 255, 0);
 font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
    </property>
    <property name="text">
@@ -133,7 +133,7 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
     <string notr="true">font: 75 8pt &quot;Rubik&quot;;</string>
    </property>
    <property name="text">
-    <string>Out Of :</string>
+    <string>Out Of </string>
    </property>
   </widget>
  </widget>

@@ -35,17 +35,20 @@ class QuizLoader:
                 'page_index': index,
             }
         return None
-    def calculate_score(self,user_answers):
-        self.user_answers = user_answers
+    def calculate_score(self,user_answer,difficulty):
+        self.user_answers = user_answer
+        self.difficulty = difficulty
         """Compare user answers vs correct answers from DB"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
-                                         
+        table_name = self.TABLES.get(self.difficulty, self.TABLES['medium'])
+        print(f"📊 Scoring from table: {table_name}")                            
+        
         score = 0
         total = 0
                                                                  
         for qid, user_answer in self.user_answers.items():
-            cursor.execute("SELECT CORRECTOP FROM questions WHERE QID = ?", (qid,))
+            cursor.execute(f"SELECT CORRECTOP FROM {table_name} WHERE QID = ?", (qid,))
             result = cursor.fetchone()
                                                                                                                              
             if result:

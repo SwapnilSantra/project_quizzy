@@ -16,12 +16,12 @@ class DifficultyDialog(QDialog):
         super().__init__(parent)
         loadUi('uifiles/choosedifficulty.ui',self)
         self.setWindowTitle("🎯 Select Quiz Difficulty")
+        self.startbutton.clicked.connect(self.accept) 
         self.setModal(True)
         self.setFixedSize(400, 350)
 
     def get_difficulty(self):
         """Return selected difficulty based on radio buttons"""
-        # Replace with YOUR radio button objectNames from UI
         if self.easybutton.isChecked():     
             return "easy"
         elif self.mediumbutton.isChecked():

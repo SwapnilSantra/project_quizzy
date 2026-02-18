@@ -1,5 +1,5 @@
 from PyQt5.uic import loadUi
-from PyQt5.QtWidgets import QMainWindow,QStackedWidget
+from PyQt5.QtWidgets import QMainWindow,QDialog
 import json
 from PyQt5.QtWidgets import (QMainWindow,QLabel, QRadioButton)
 from resources.logo import *
@@ -33,7 +33,7 @@ class QuizForm(QMainWindow):
       #  self.q11.clicked.connect(nav.setCurrentIndex(10))
       #  self.q12.clicked.connect(nav.setCurrentIndex(11))
       #  self.q13.clicked.connect(nav.setCurrentIndex(12))
-      ##  self.q14.clicked.connect(nav.setCurrentIndex(13))
+      #  self.q14.clicked.connect(nav.setCurrentIndex(13))
       #  self.q15.clicked.connect(nav.setCurrentIndex(14))
       #  self.q16.clicked.connect(nav.setCurrentIndex(15))
       #  self.q17.clicked.connect(nav.setCurrentIndex(16))
@@ -85,7 +85,7 @@ class QuizForm(QMainWindow):
         answer = self.get_current_page_answers()
         print(f"🔍 SAVE DEBUG: qid={qid}, answer={answer}")
         if answer:
-            self.user_answers[qid] = answer
+            self.user_answer[qid] = answer
             print(f"Saved Q{current_idx+1}: {answer}")
         else:
             print("No answer selected")
@@ -103,12 +103,19 @@ class QuizForm(QMainWindow):
     def finish_quiz(self):
         """FINALIZE + show results"""
         self.save_quiz_progress()
-        score, total = self.quiz_loader.calculate_score(self.user_answer)
-        self.results_widget = ResultWidget(score, total)
-        self.stackedwindow = QStackedWidget()
-        self.stackedwindow.addWidget(self.results_widget)
-        self.stackedwindow.setCurrentIndex(0)
-        self.stackedwindow.show()
+        score, total = self.quiz_loader.calculate_score(self.user_answer,self.difficulty)
+        self.result_widget = ResultWidget(score, total)
+        #result_dialog = ResultWidget(self, score, total, self.difficulty)
+        result = self.result_widget.exec_()  
+    
+        if result == QDialog.Accepted:
+            print(" Back to menu")
+            self.close()
+           #self.parent().show() 
+       # self.stackedwindow = QStackedWidget()
+       # self.stackedwindow.addWidget(self.results_widget)
+       # self.stackedwindow.setCurrentIndex(0)
+       # self.stackedwindow.show()
 
     def save_quiz_progress(self):
         """Save progress to JSON"""
